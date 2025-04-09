@@ -1,0 +1,26 @@
+@mixin flex($jc: space-between, $ai: center) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+}
+
+@mixin grid($gap: 0, $jc: flex-start, $ai: stretch) {
+  display: grid;
+  gap: $gap;
+  justify-content: $jc;
+  align-items: $ai;
+}
+
+@mixin parallex-bg($COLOR, $URL) {
+  background-image: linear-gradient(to right, $COLOR, $COLOR), url($URL);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@mixin assign-value($properties, $value) {
+  @each $property in $properties {
+    #{$property}: $value;
+  }
+}
